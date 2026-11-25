@@ -1,0 +1,313 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>UUD 1945 Masa Revolusi</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Sniglet:wght@400;800&display=swap">
+<style>
+/* Layout: halaman catatan sejarah. Panel cokelat di atas, lima kartu indikator bercentang, lalu garis waktu. */
+:root {
+  --bg: #F3EADB;
+  --paper: #FBF6EC;
+  --ink: #3A2418;
+  --muted: #6E5646;
+  --line: #D8C5AA;
+  --panel: #85533F;
+  --on-panel: #FBF1E2;
+  --accent: #A8523A;
+  --check: #C23B2A;
+  --leaf: #7F8B4A;
+  --ok-bg: #E3E8CC; --ok-fg: #47521F;
+  --warn-bg: #F6E2B8; --warn-fg: #6B4A0C;
+  --bad-bg: #F3D3CC; --bad-fg: #7E2A1E;
+  --font-display: "Sniglet", "Trebuchet MS", sans-serif;
+  --font-body: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1E1511; --paper: #2A1D17; --ink: #F2E7D6; --muted: #C4AF9B; --line: #4C382D;
+    --panel: #4A2D22; --on-panel: #FBF1E2; --accent: #E0937A; --check: #F0715E; --leaf: #A5B26A;
+    --ok-bg: #3A4023; --ok-fg: #D5DDAA;
+    --warn-bg: #4D3A14; --warn-fg: #F0D79A;
+    --bad-bg: #55231B; --bad-fg: #F2C2B8;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1E1511; --paper: #2A1D17; --ink: #F2E7D6; --muted: #C4AF9B; --line: #4C382D;
+  --panel: #4A2D22; --on-panel: #FBF1E2; --accent: #E0937A; --check: #F0715E; --leaf: #A5B26A;
+  --ok-bg: #3A4023; --ok-fg: #D5DDAA;
+  --warn-bg: #4D3A14; --warn-fg: #F0D79A;
+  --bad-bg: #55231B; --bad-fg: #F2C2B8;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 20px 48px;
+}
+.wrap { max-width: 1040px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px; }
+h1, h2, h3 { font-family: var(--font-display); margin: 0; text-wrap: balance; line-height: 1.2; }
+p { margin: 0; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+
+/* Hero */
+.hero { background: var(--panel); border-radius: 28px; padding: 14px; position: relative; overflow: hidden; }
+.hero-inner {
+  border: 2px dashed color-mix(in srgb, var(--on-panel) 55%, transparent);
+  border-radius: 18px;
+  padding: clamp(20px, 4vw, 40px);
+  color: var(--on-panel);
+  display: flex; flex-direction: column; gap: 18px;
+}
+.kicker { font-weight: 700; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; opacity: .85; }
+.hero h1 { font-size: clamp(28px, 5.4vw, 52px); font-weight: 800; letter-spacing: .02em; }
+.hero .dates { font-family: var(--font-display); font-size: clamp(16px, 2.4vw, 22px); }
+.hero .lead { max-width: 62ch; opacity: .95; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+.chip {
+  font: 700 14px/1 var(--font-body);
+  background: color-mix(in srgb, var(--on-panel) 14%, transparent);
+  color: var(--on-panel);
+  border: 1.5px solid color-mix(in srgb, var(--on-panel) 45%, transparent);
+  border-radius: 999px; padding: 9px 14px 9px 10px;
+  display: inline-flex; align-items: center; gap: 7px; cursor: pointer;
+}
+.chip:hover { background: color-mix(in srgb, var(--on-panel) 26%, transparent); }
+.chip svg { width: 16px; height: 16px; flex: none; }
+.leaf { position: absolute; right: -10px; bottom: -14px; width: 120px; height: 120px; color: var(--leaf); opacity: .9; pointer-events: none; }
+
+/* Section heads */
+.sec-head { display: flex; flex-direction: column; gap: 6px; margin-bottom: 18px; }
+.sec-head h2 { font-size: clamp(22px, 3.4vw, 30px); font-weight: 800; }
+.sec-head p { color: var(--muted); max-width: 62ch; }
+
+/* Four periods */
+.periods { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.period { border: 1.5px solid var(--line); border-radius: 14px; padding: 12px 14px; background: var(--paper); min-width: 0; }
+.period b { display: block; font-family: var(--font-display); font-weight: 400; font-size: 15px; line-height: 1.3; }
+.period span { display: block; color: var(--muted); font-size: 13px; margin-top: 4px; }
+.period.now { background: var(--panel); border-color: var(--panel); color: var(--on-panel); }
+.period.now span { color: var(--on-panel); opacity: .85; }
+.tag-now { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 6px; opacity: .9; }
+
+/* Indicator cards */
+.cards { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
+.card {
+  grid-column: span 2;
+  background: var(--paper);
+  border: 1.5px solid var(--line);
+  border-radius: 18px;
+  padding: 20px 20px 22px;
+  display: flex; flex-direction: column; gap: 14px;
+  min-width: 0; scroll-margin-top: 16px;
+}
+.card.wide { grid-column: span 3; }
+.card-top { display: flex; align-items: center; gap: 12px; }
+.tick { width: 34px; height: 34px; flex: none; }
+.card h3 { font-size: 21px; font-weight: 800; }
+.pill { align-self: flex-start; font-size: 13px; font-weight: 700; padding: 4px 11px; border-radius: 999px; display: inline-flex; gap: 6px; align-items: center; }
+.pill::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+.pill.ok { background: var(--ok-bg); color: var(--ok-fg); }
+.pill.warn { background: var(--warn-bg); color: var(--warn-fg); }
+.pill.bad { background: var(--bad-bg); color: var(--bad-fg); }
+.summary { font-weight: 600; }
+.facts { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; border-top: 1.5px dashed var(--line); padding-top: 14px; }
+.facts li { min-width: 0; }
+.ref { display: block; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+.facts span.t { display: block; color: var(--ink); font-size: 15px; }
+
+/* Timeline */
+.timeline { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px; }
+.timeline li { border-top: 4px solid var(--panel); padding-top: 10px; min-width: 0; }
+.timeline time { font-family: var(--font-display); font-size: 17px; display: block; margin-bottom: 4px; }
+.timeline p { font-size: 15px; color: var(--muted); }
+
+/* Conclusion */
+.conclusion { background: var(--paper); border: 2px dashed var(--line); border-radius: 22px; padding: clamp(18px, 3vw, 28px); display: flex; flex-direction: column; gap: 10px; }
+.conclusion h2 { font-size: 22px; font-weight: 800; }
+.conclusion p { max-width: 70ch; }
+.foot { color: var(--muted); font-size: 13px; }
+
+@media (max-width: 900px) {
+  .periods { grid-template-columns: repeat(2, 1fr); }
+  .cards { grid-template-columns: repeat(2, 1fr); }
+  .card, .card.wide { grid-column: span 1; }
+  .card:last-child { grid-column: span 2; }
+}
+@media (max-width: 600px) {
+  .cards { grid-template-columns: 1fr; }
+  .card:last-child { grid-column: auto; }
+  .periods { grid-template-columns: 1fr; }
+  .leaf { width: 84px; height: 84px; }
+}
+</style>
+
+<div class="wrap">
+  <header class="hero">
+    <div class="hero-inner">
+      <span class="kicker">Periode konstitusi ke-1</span>
+      <h1>UUD 1945 pada Masa Revolusi Kemerdekaan</h1>
+      <p class="dates">18 Agustus 1945 – 27 Desember 1949</p>
+      <p class="lead">Konstitusi pertama Indonesia disahkan sehari setelah proklamasi dan harus dijalankan di tengah perang. Infografis ini memeriksa lima indikator negara demokrasi pada periode tersebut.</p>
+      <div class="chips" id="chips"></div>
+    </div>
+    <svg class="leaf" viewBox="0 0 120 120" fill="currentColor" aria-hidden="true">
+      <path d="M20 112 C34 84 52 62 84 40" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <ellipse cx="44" cy="78" rx="9" ry="19" transform="rotate(-35 44 78)"/>
+      <ellipse cx="62" cy="58" rx="9" ry="19" transform="rotate(-45 62 58)"/>
+      <ellipse cx="86" cy="42" rx="8" ry="17" transform="rotate(-60 86 42)"/>
+      <ellipse cx="32" cy="98" rx="7" ry="14" transform="rotate(-20 32 98)"/>
+    </svg>
+  </header>
+
+  <section aria-labelledby="h-periode">
+    <div class="sec-head">
+      <h2 id="h-periode">Satu dari empat periode konstitusi</h2>
+      <p>Pembagian periode konstitusi di Indonesia, dengan periode yang dibahas di sini diberi warna cokelat.</p>
+    </div>
+    <div class="periods">
+      <div class="period now"><span class="tag-now">Dibahas</span><b>UUD 1945 masa Revolusi Kemerdekaan</b><span>1945 – 1949</span></div>
+      <div class="period"><b>UUD RIS</b><span>1949 – 1950</span></div>
+      <div class="period"><b>UUDS 1950</b><span>1950 – 1959</span></div>
+      <div class="period"><b>UUD NRI Tahun 1945</b><span>5 Juli 1959 – 19 Oktober 1999</span></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-indikator">
+    <div class="sec-head">
+      <h2 id="h-indikator">Lima komponen yang dianalisis</h2>
+      <p>Setiap kartu memuat ringkasan, status pelaksanaan pada periode ini, dan dasar yang menopangnya.</p>
+    </div>
+    <div class="cards">
+
+      <article class="card" id="k-akuntabilitas">
+        <div class="card-top">
+          <svg class="tick" viewBox="0 0 34 34" fill="none" aria-hidden="true"><path d="M5 18 L13 27 L29 7" stroke="var(--check)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3>Akuntabilitas</h3>
+        </div>
+        <span class="pill warn">Bergeser ke sistem parlementer</span>
+        <p class="summary">Naskah UUD meminta Presiden bertanggung jawab kepada MPR. Karena MPR belum terbentuk, pertanggungjawaban berpindah ke KNIP.</p>
+        <ul class="facts">
+          <li><span class="ref">Pasal IV Aturan Peralihan</span><span class="t">Sebelum MPR, DPR, dan DPA terbentuk, Presiden menjalankan kekuasaan dengan bantuan Komite Nasional.</span></li>
+          <li><span class="ref">Maklumat Wakil Presiden No. X · 16 Okt 1945</span><span class="t">KNIP memegang kekuasaan legislatif dan ikut menetapkan GBHN. Tugas sehari-hari dijalankan Badan Pekerja KNIP.</span></li>
+          <li><span class="ref">Maklumat Pemerintah · 14 Nov 1945</span><span class="t">Menteri bertanggung jawab kepada KNIP. Sutan Sjahrir menjadi perdana menteri pertama dalam kabinet parlementer.</span></li>
+        </ul>
+      </article>
+
+      <article class="card" id="k-rotasi">
+        <div class="card-top">
+          <svg class="tick" viewBox="0 0 34 34" fill="none" aria-hidden="true"><path d="M5 18 L13 27 L29 7" stroke="var(--check)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3>Rotasi Kekuasaan</h3>
+        </div>
+        <span class="pill warn">Terbatas pada kabinet</span>
+        <p class="summary">Presiden dan Wakil Presiden tidak berganti selama periode ini. Pergantian terjadi di tingkat kabinet.</p>
+        <ul class="facts">
+          <li><span class="ref">Pasal 7 naskah asli</span><span class="t">Masa jabatan lima tahun dan dapat dipilih kembali, tanpa batas jumlah periode.</span></li>
+          <li><span class="ref">Kabinet silih berganti</span><span class="t">Kabinet Sjahrir, Amir Sjarifuddin, dan Hatta bergantian seiring perubahan dukungan partai.</span></li>
+          <li><span class="ref">19 Desember 1948</span><span class="t">Saat Agresi Militer II, mandat pemerintahan diteruskan kepada Syafruddin Prawiranegara melalui Pemerintah Darurat RI di Sumatera.</span></li>
+        </ul>
+      </article>
+
+      <article class="card" id="k-rekrutmen">
+        <div class="card-top">
+          <svg class="tick" viewBox="0 0 34 34" fill="none" aria-hidden="true"><path d="M5 18 L13 27 L29 7" stroke="var(--check)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3>Pola Rekrutmen Politik</h3>
+        </div>
+        <span class="pill ok">Penunjukan dan multipartai</span>
+        <p class="summary">Pejabat tertinggi tidak dipilih rakyat langsung. Mereka direkrut lewat penetapan PPKI, penunjukan, dan jalur partai politik.</p>
+        <ul class="facts">
+          <li><span class="ref">18 Agustus 1945</span><span class="t">PPKI memilih Soekarno sebagai Presiden dan Mohammad Hatta sebagai Wakil Presiden secara aklamasi (Pasal III Aturan Peralihan).</span></li>
+          <li><span class="ref">Keanggotaan KNIP</span><span class="t">Anggota ditunjuk dari tokoh berbagai golongan, lalu jumlahnya diperluas bertahap.</span></li>
+          <li><span class="ref">Maklumat Pemerintah · 3 Nov 1945</span><span class="t">Pemerintah menyambut berdirinya partai politik. Masyumi, PNI, PKI, dan Partai Sosialis termasuk yang aktif pada masa itu.</span></li>
+        </ul>
+      </article>
+
+      <article class="card wide" id="k-pemilu">
+        <div class="card-top">
+          <svg class="tick" viewBox="0 0 34 34" fill="none" aria-hidden="true"><path d="M5 18 L13 27 L29 7" stroke="var(--check)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3>Pemilu</h3>
+        </div>
+        <span class="pill bad">Belum terlaksana</span>
+        <p class="summary">Tidak ada pemilihan umum nasional pada periode ini. Rencananya ada, tetapi perang dan perundingan menghalangi pelaksanaannya.</p>
+        <ul class="facts">
+          <li><span class="ref">Maklumat Pemerintah · 3 Nov 1945</span><span class="t">Memuat harapan agar partai tersusun sebelum pemilihan anggota badan perwakilan rakyat pada Januari 1946.</span></li>
+          <li><span class="ref">Hambatan</span><span class="t">Pertempuran, agresi militer Belanda, serta perundingan Linggarjati dan Renville menyita perhatian pemerintah.</span></li>
+          <li><span class="ref">UU No. 27 Tahun 1948 dan UU No. 12 Tahun 1949</span><span class="t">Mengatur pemilihan anggota DPR dan Konstituante. Pemilu nasional pertama baru berlangsung pada 1955.</span></li>
+        </ul>
+      </article>
+
+      <article class="card wide" id="k-hak">
+        <div class="card-top">
+          <svg class="tick" viewBox="0 0 34 34" fill="none" aria-hidden="true"><path d="M5 18 L13 27 L29 7" stroke="var(--check)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3>Pemenuhan Hak-hak Dasar</h3>
+        </div>
+        <span class="pill warn">Dijamin pokoknya, pelaksanaan terbatas</span>
+        <p class="summary">Naskah asli memuat sedikit pasal tentang hak warga negara dengan rumusan singkat. Kondisi perang membatasi pemenuhannya.</p>
+        <ul class="facts">
+          <li><span class="ref">Pasal 27 dan 28</span><span class="t">Kedudukan yang sama di hadapan hukum dan pemerintahan, hak atas pekerjaan dan penghidupan layak, serta kebebasan berserikat, berkumpul, dan mengeluarkan pikiran yang diatur dengan undang-undang.</span></li>
+          <li><span class="ref">Pasal 29, 31, dan 34</span><span class="t">Kemerdekaan memeluk agama dan beribadat, hak memperoleh pengajaran, dan pemeliharaan fakir miskin serta anak terlantar oleh negara.</span></li>
+          <li><span class="ref">Praktik di lapangan</span><span class="t">Kebebasan berpartai terbuka lewat maklumat 3 November 1945, sementara pendidikan dan kesejahteraan terganggu oleh perang dan blokade ekonomi Belanda.</span></li>
+        </ul>
+      </article>
+
+    </div>
+  </section>
+
+  <section aria-labelledby="h-waktu">
+    <div class="sec-head">
+      <h2 id="h-waktu">Peristiwa penting, berurutan</h2>
+      <p>Tonggak yang membentuk jalannya lima komponen di atas.</p>
+    </div>
+    <ol class="timeline">
+      <li><time>17 Agustus 1945</time><p>Proklamasi kemerdekaan Indonesia.</p></li>
+      <li><time>18 Agustus 1945</time><p>PPKI mengesahkan UUD 1945 dan memilih Presiden serta Wakil Presiden.</p></li>
+      <li><time>16 Oktober 1945</time><p>Maklumat Wakil Presiden No. X memberi KNIP kekuasaan legislatif.</p></li>
+      <li><time>3 November 1945</time><p>Maklumat Pemerintah membuka jalan bagi sistem multipartai.</p></li>
+      <li><time>14 November 1945</time><p>Kabinet parlementer pertama dibentuk di bawah Sutan Sjahrir.</p></li>
+      <li><time>19 Desember 1948</time><p>Agresi Militer II dan pembentukan Pemerintah Darurat RI.</p></li>
+      <li><time>27 Desember 1949</time><p>Penyerahan kedaulatan. Konstitusi RIS mulai berlaku.</p></li>
+    </ol>
+  </section>
+
+  <section class="conclusion" aria-labelledby="h-simpul">
+    <h2 id="h-simpul">Kesimpulan singkat</h2>
+    <p>Semangat demokrasi kuat sejak awal, terlihat dari sistem kabinet parlementer, kebebasan berpartai, dan rencana pemilu. Namun perang membuat pemilu belum terlaksana dan banyak ketentuan UUD 1945 belum berjalan sepenuhnya.</p>
+    <p class="foot">Disusun dari naskah UUD 1945, Maklumat Wakil Presiden No. X, serta Maklumat Pemerintah 3 dan 14 November 1945. Cocokkan juga dengan buku paket untuk tugas kelas.</p>
+  </section>
+</div>
+
+<script>
+(function () {
+  var items = [
+    ["Akuntabilitas", "k-akuntabilitas"],
+    ["Rotasi Kekuasaan", "k-rotasi"],
+    ["Pola Rekrutmen Politik", "k-rekrutmen"],
+    ["Pemilu", "k-pemilu"],
+    ["Pemenuhan Hak-hak Dasar", "k-hak"]
+  ];
+  var box = document.getElementById("chips");
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  items.forEach(function (it) {
+    var b = document.createElement("button");
+    b.type = "button";
+    b.className = "chip";
+    b.innerHTML = '<svg viewBox="0 0 34 34" fill="none" aria-hidden="true"><path d="M5 18 L13 27 L29 7" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    b.appendChild(document.createTextNode(it[0]));
+    b.addEventListener("click", function () {
+      var el = document.getElementById(it[1]);
+      if (el) el.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+    });
+    box.appendChild(b);
+  });
+})();
+</script>
+
+</body></html>
